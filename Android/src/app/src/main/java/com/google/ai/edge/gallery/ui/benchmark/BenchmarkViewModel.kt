@@ -210,6 +210,10 @@ constructor(
     }
   }
 
+  fun clearBenchmarkError() {
+    _uiState.update { it.copy(errorMessage = null) }
+  }
+
   fun setShowResultsViewer(showResultsViewer: Boolean) {
     _uiState.update { _uiState.value.copy(showResultsViewer = showResultsViewer) }
   }
