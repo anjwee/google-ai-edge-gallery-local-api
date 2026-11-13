@@ -339,7 +339,7 @@ fun BenchmarkScreen(
       onDismissRequest = { viewModel.clearBenchmarkError() },
       confirmButton = {
         Button(onClick = { viewModel.clearBenchmarkError() }) {
-          Text(stringResource(R.string.confirm))
+          Text("OK")
         }
       },
     )
