@@ -328,7 +328,6 @@ fun BenchmarkScreen(
       },
     )
   }
-}
   // Show benchmark failures instead of leaving the user with a crashed or stuck screen.
   uiState.errorMessage?.let { message ->
     AlertDialog(
@@ -342,6 +341,7 @@ fun BenchmarkScreen(
       },
     )
   }
+}
 
 private fun getStringConfigValue(values: Map<String, Any>, key: ConfigKey): String {
   return convertValueToTargetType(value = values.get(key.label) ?: "", valueType = ValueType.STRING)
