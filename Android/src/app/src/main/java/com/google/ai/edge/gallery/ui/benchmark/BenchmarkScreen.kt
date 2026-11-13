@@ -330,6 +330,21 @@ fun BenchmarkScreen(
   }
 }
 
+
+  // Show benchmark failures instead of leaving the user with a crashed or stuck screen.
+  uiState.errorMessage?.let { message ->
+    AlertDialog(
+      title = { Text("Benchmark failed") },
+      text = { Text(message) },
+      onDismissRequest = { viewModel.clearBenchmarkError() },
+      confirmButton = {
+        Button(onClick = { viewModel.clearBenchmarkError() }) {
+          Text(stringResource(R.string.confirm))
+        }
+      },
+    )
+  }
+
 private fun getStringConfigValue(values: Map<String, Any>, key: ConfigKey): String {
   return convertValueToTargetType(value = values.get(key.label) ?: "", valueType = ValueType.STRING)
     as String
