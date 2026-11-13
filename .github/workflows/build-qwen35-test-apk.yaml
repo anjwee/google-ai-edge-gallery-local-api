@@ -1,6 +1,9 @@
 name: Build Qwen3.5 Test APK
 
 on:
+  push:
+    branches:
+      - fix/qwen35-litertlm-runtime
   workflow_dispatch:
 
 permissions:
